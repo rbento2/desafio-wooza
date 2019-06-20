@@ -1,22 +1,36 @@
 import React from 'react'
 import ComponentCard from './components/cards.js'
+import Loading from './assets/img/loading.gif'
 
 export default class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            functionario:[
-                {name:'Renato', office:'Desenvolvedo Front-end'},
-                {name:'Lauro', office:'Desenvolvedor Back-end'},
-                {name:'Marcus', office:'Desenvolvedor Front-end'},
-                {name:'Priscila', office:'Product Owner'}
-            ]    
+            worker:''
         }
     }
 
+    componentWillMount(){
+        fetch('http://localhost:3000/index.json')
+            .then((result)=>{
+                return result.json()
+            })
+            .then((data)=>{
+                debugger;
+                this.setState({worker: data.worker})
+            })
+            .catch((error)=>{
+                console.error(error)
+            })
+    }
+
+
     render(){
         return(
-            <ComponentCard worker={this.state.functionario}/>
+            this.state.worker !== '' ?
+                <ComponentCard worker={this.state.worker}/>
+            :<img src={Loading} />
+        
             )
     }
 

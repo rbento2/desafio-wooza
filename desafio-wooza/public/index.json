@@ -1,0 +1,8 @@
+{
+    "worker":[
+        {"name":"Renato", "office":"Desenvolvedo Front-end"},
+        {"name":"Lauro", "office":"Desenvolvedor Back-end"},
+        {"name":"Marcus", "office":"Desenvolvedor Front-end"},
+        {"name":"Priscila", "office":"Product Owner"}
+    ]
+}
