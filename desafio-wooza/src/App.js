@@ -1,23 +1,22 @@
 import React from 'react'
+import ComponentCard from './components/cards.js'
 
 export default class App extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            functionario:[
+                {name:'Renato', office:'Desenvolvedo Front-end'},
+                {name:'Lauro', office:'Desenvolvedor Back-end'},
+                {name:'Marcus', office:'Desenvolvedor Front-end'},
+                {name:'Priscila', office:'Product Owner'}
+            ]    
+        }
+    }
 
     render(){
         return(
-            <div>
-                <div className="card">
-                    <img src="" /> 
-                    <div>
-                        <span>Nome Funcionário</span>
-                        <h1>Renato Bento</h1>
-                        <hr/>
-                        <span>Cargo</span>
-                        <h1>Desenvolvedor Front-end</h1>
-                    </div>
-                </div>
-            </div>
-            
-            
+            <ComponentCard worker={this.state.functionario}/>
             )
     }
 
