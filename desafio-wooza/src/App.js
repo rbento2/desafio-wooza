@@ -16,7 +16,6 @@ export default class App extends React.Component {
                 return result.json()
             })
             .then((data)=>{
-                debugger;
                 this.setState({worker: data.worker})
             })
             .catch((error)=>{
